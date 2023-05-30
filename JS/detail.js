@@ -76,6 +76,20 @@ document.addEventListener('DOMContentLoaded', ()=> {
   })
 })
 
+//search_area
+document.addEventListener('DOMContentLoaded', () => { 
+  const searchIcon = document.getElementById('search_icon')
+  const searchClose = document.querySelector('.search_close')
+
+  searchIcon.addEventListener('click', function() {
+    document.querySelector('.search_area').style.height = 340 + 'px'
+  })
+
+  searchClose.addEventListener('click', function(){
+    document.querySelector('.search_area').style.height = 0
+  })
+});
+
 
 //detail_box01
 document.addEventListener('DOMContentLoaded', ()=> {

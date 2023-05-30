@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JO MALONE LONDON</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../font/stylesheet.css">
+
+    <script defer src="./login.js"></script>
+</head>
+<body>
+    <div class="logo_area">
+        <a href="../index.html">
+            <p>JO MALONE</p>
+            <p>LONDON</p>
+        </a>
+    </div>
+
+    <section class="login_area" id="login_area">
+        <div class="id_box" id="id_box">
+            <input type="text" name="username" id="username" placeholder="아이디 입력 (london)">
+        </div>
+        <div class="pw_box" id="pw_box">
+            <input type="password" name="userpw" id="userpw" placeholder="비밀번호 입력 (1234)">
+        </div>
+        <div class="id_check">
+            <input type="checkbox" id="id_save" checked>
+            <label for="id_save"><span>아이디 저장</span></label>
+        </div>
+        <div class="fail_box" id="fail_box">
+            <p>아이디 또는 비밀번호를 잘못 입력하셨습니다. 입력하신 내용을 다시 확인해주세요.</p>
+            <!-- <p>입력하신 내용을 다시 확인해주세요.</p> -->
+        </div>
+        <div class="login_btn">
+            <button type="submit" id="login" class="login">로그인</button>
+        </div>
+        <div class="bottom_menu">
+            <ul>
+                <li><a href="../JOIN/join.html">회원가입</a></li>
+                <li><a href="../ID_Search/id_search.html">아이디 찾기</a></li>
+                <li><a href="../PW_Search/pw_search.html">비밀번호 찾기</a></li>
+            </ul>
+        </div>
+        <div class="login_img">
+            <img src="./img/login_img.png" alt="login_img">
+        </div>
+    </section>
+</body>
+</html>

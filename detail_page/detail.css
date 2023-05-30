@@ -273,6 +273,7 @@ header {
   /* display: none; */
   overflow: hidden;
   transition: all 0.3s;
+  border-bottom: 1px solid #dbdbdb;
 }
 .search_area .search {
   width: 1300px;

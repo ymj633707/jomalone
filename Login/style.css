@@ -1,0 +1,191 @@
+*{margin: 0; padding: 0;}
+a {text-decoration: none;}
+li {list-style: none;}
+body {
+    background-color: #FCF9EE;
+}
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*-------------------font-------------------*/
+/* .your-style {
+    font-family: 'Bookk Myungjo';
+    font-weight: 300;
+    font-style: normal;
+}
+.your-style {
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+    font-style: normal;
+} //영어폰트_부크크
+*/
+
+.logo_area {
+    width: 200px;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.logo_area a {
+    color: #000;
+    text-align: center;
+}
+.logo_area a p:first-child {
+    font-size: 30px;
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.logo_area a p:last-child {
+    font-size: 12px;
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+} 
+
+.login_area {
+    width: 480px; height: auto;
+    /* background-color: #fff; */
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.login_area .id_box {
+    width: 480px; height: 50px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.login_area .id_box input {
+    outline: none;
+    border: none;
+    width: 450px;
+    height: 100%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 16px;
+}
+.login_area .id_box input::placeholder {
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 14px;
+    color: #ccc;
+}
+
+.login_area .pw_box {
+    width: 480px; height: 50px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.login_area .pw_box input {
+    outline: none;
+    border: none;
+    width: 450px;
+    height: 100%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+   font-size: 18px;
+}
+.login_area .pw_box input::placeholder {
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 14px;
+    color: #ccc;
+}
+
+.login_area .id_check {
+    margin: 15px 0;
+}
+#id_save {
+    display: none;
+}
+.login_area .id_check label {
+    position: relative;
+    padding-left: 27px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.login_area .id_check label::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 21px; height: 21px;
+    background: url(./img/btn_check_off.png) center;
+    background-size: cover;
+}
+#id_save:checked ~ label::before {
+    background: url(./img/btn_check_on.png) center;
+    background-size: cover;
+}
+.login_area .id_check label span {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+
+.login_area .login_btn {
+    margin-top: 10px;
+}
+
+.login_area .login_btn .login {
+    width: 480px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'KOTRA_GOTHIC';  
+    cursor: pointer;  
+}
+
+.login_area .bottom_menu{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.login_area .bottom_menu ul li a{
+    color: #000;
+}
+.login_area .bottom_menu ul li {
+    display: inline-block;
+    padding-right: 15px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 14px;
+    font-family: 'KOTRA_GOTHIC';  
+}
+.login_area .bottom_menu ul li:before {
+    content: "";
+    width: 1px; height: 12px;
+    background-color: #ccc;
+    position: absolute;
+    right: 4px; top: 3px;
+}
+.login_area .bottom_menu ul li:last-child::before {
+    display: none;
+}
+
+
+.login_area .login_img {
+    width: 100%;
+    height: 210px;
+}
+.login_area .login_img img {
+    width: 100%;
+}
+.fail_box {
+    opacity: 0;
+}
+.fail_box p {
+    font-size: 12px;
+    color: red;
+}
+

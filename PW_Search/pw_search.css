@@ -1,0 +1,213 @@
+* {margin: 0; padding: 0;}
+a {text-decoration: none;
+color: #000;}
+li {list-style: none;}
+body {
+    background-color: #FCF9EE;
+    font-family: 'KOTRA_GOTHIC';
+}
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*-------------------font-------------------*/
+/* .your-style {
+    font-family: 'Bookk Myungjo';
+    font-weight: 300;
+    font-style: normal;
+}
+.your-style {
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+    font-style: normal;
+} //영어폰트_부크크
+*/
+
+.logo_area {
+    width: 200px;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.logo_area a {
+    color: #000;
+    text-align: center;
+}
+.logo_area a p:first-child {
+    font-size: 30px;
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.logo_area a p:last-child {
+    font-size: 12px;
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+} 
+
+.pw_search_area {
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+}
+.pw_search_area h2 {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 26px;
+    text-align: center;
+    
+}
+.pw_search_area .notice_txt {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.pw_search_area .name_area,.number_area,.id_area {
+    display: flex;
+}
+.pw_search_area input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 5px 5px;
+    box-sizing: border-box;
+}
+.pw_search_area input::placeholder {
+    color: #ccc;
+}
+.pw_search_area label {
+    width: 130px;
+    text-align: center;
+    line-height: 60px;
+}
+.pw_search_area  .info_box {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.pw_search_area  .info_box {
+    margin: 10px 0;
+}
+
+.pw_search_area .btn_area {
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.pw_search_area .cancel_btn {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.pw_search_area .cancel_btn a {
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 16px;
+    padding: 5px 50px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.pw_search_area .search_btn {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #ccc;
+    background-color: #000;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/*--------------------modal--------------------*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal .bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modalBox {
+    position: absolute;
+    background-color: #fff;
+    width: 400px;
+    height: 300px;
+    padding: 15px;
+    top: 210px;
+  }
+
+  .modalBox .closeBtn {
+    display: block;
+    width: 50px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0; top: 10px;
+    border: none;
+    background: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .modalBox p {
+    font-size: 20px;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    line-height: 150px;
+  }
+  .modalBox .name_style {
+    font-weight: bold;
+  }
+  .modalBox .id_style {
+    font-weight: bold;
+    color: #ff0000;
+  }
+  .modalBox .button_box {
+    width: 100%;
+    height: 50px; 
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .modalBox .login_btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    background-color: #000;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+  }
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JO MALONE LONDON</title>
+    <link rel="stylesheet" href="./id_search.css">
+    <link rel="stylesheet" href="../font/stylesheet.css">
+    <script defer src="./id.js"></script>
+</head>
+<body>
+    <div class="logo_area">
+        <a href="../index.html">
+            <p>JO MALONE</p>
+            <p>LONDON</p>
+        </a>
+    </div>
+
+    <div class="id_search_area">
+        <h2>아이디 찾기</h2>
+        <p class="notice_txt">아이디는 가입시 입력하신 휴대폰 번호를 통해 찾으실 수 있습니다.</p>
+        <div class="name_area">
+            <label for="user_name" class="name_style">이름</label>
+            <div class="name_box info_box">
+                <input type="text" id="user_name" name="user_name" placeholder="이름을 입력해주세요(홍길동)" required autofocus>
+            </div>
+        </div>
+        <div class="number_area">
+            <label for="user_number">휴대폰 번호</label>
+            <div class="name_box info_box">
+                <input type="text" id="user_number" name="user_number" placeholder="01012341234" required>
+            </div>
+        </div> <!--number_area-->
+        <div class="btn_area">
+            <button type="button" class="cancel_btn"><a href="../Login/login_page.html">취소</a></button>
+            <button type="button" class="search_btn">찾기</button>
+        </div>
+    </div>
+    <div class="modal hidden">
+        <div class="bg"></div>
+        <div class="modalBox">
+            <p><span class="name_style">홍길동 </span>님의 아이디는 <span class="id_style"> london </span>입니다.</p>
+            <button class="closeBtn">✖</button>
+            <div class="button_box">
+                <button class="pw_btn">비밀번호 찾기</button>
+                <button class="login_btn">로그인</button>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
