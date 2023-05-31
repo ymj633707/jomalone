@@ -318,7 +318,7 @@ header {
         left: 435px;
     }
     .sub_menu03 {
-        left: 555px;
+        left: 564px;
     }
     .sub_menu04 {
         left: 680px;
@@ -657,8 +657,6 @@ header {
             object-fit: cover;
         }
     }
-    
-    
   }
 
   .mySwiper .swiper-slide {
@@ -678,18 +676,8 @@ header {
   .swiper-button-next, .swiper-button-prev {
         width: 35px;
         height: 50px;
-        
-    
   }
 
-
-/*   .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  } 
- */
 }
 
 
@@ -1508,11 +1496,6 @@ header {
         width: 20%;
       }
 
-
-
-
-
-
     .tab_item.active {
         background-color: #fdf7e3;
         color: #000;
@@ -1530,91 +1513,6 @@ header {
         &::after {
             width: calc(100% - 10px);
         }
-
-        /* .square {
-            display: block;
-            width: 76px;
-            height: 76px;
-            position: absolute;
-            top: 107px;
-            left: 107px;
-            margin: -100px auto auto -100px;
-            overflow: hidden;
-            border: 1px solid #222;
-        }
-
-        .l1,.l2,.l3,.l4 {
-            position: absolute;
-            background: transparent;
-            width: 0px;
-            height: 0px;
-
-            -webkit-animation-duration: .4s;
-            -webkit-animation-iteration-count:1;
-            -webkit-animation-timing-function: ease-in-out;
-            -webkit-animation-fill-mode: forwards;
-        }
-
-
-        .l1 {
-            left: 0;
-            bottom: 0;
-            height: 76px;
-            width: 1px;
-            -webkit-animation-name: l1;
-            -webkit-animation-delay: 0s;
-        }
-
-        .l2 {
-            top: 0;
-            left: 0;
-            width: 76px;
-            height: 1px;
-            -webkit-animation-name: l2;
-            -webkit-animation-delay: .4s;
-        }
-
-        .l3 {
-            right: 0;
-            top: 0;
-            height: 76px;
-            width: 1px;
-            -webkit-animation-name: l3;
-            -webkit-animation-delay: .8s;
-        }
-
-        .l4 {
-            bottom: 0;
-            right: 0;
-            width: 76px;
-            height: 1px;
-            -webkit-animation-name: l4;
-            -webkit-animation-delay: 1.2s;
-        }
-        @-webkit-keyframes l1 {
-        0%    { height: 0; background: #000; }
-        100%  { height: 76px; background: #000; }
-        }
-
-        @-webkit-keyframes l2 {
-        0%    { width: 0; background: #000; }
-        100%  { width: 76px; background: #000; }
-        }
-
-        @-webkit-keyframes l3 {
-        0%    { height: 0; background: #000; }
-        100%  { height: 76px; background: #000; }
-        }
-
-        @-webkit-keyframes l4 {
-        0%    { width: 0; background: #000; }
-        100%  { width: 76px; background: #000; }
-        }
-
-        @-webkit-keyframes l4 {
-        0%    { width: 0; background: #000; }
-        100%  { width: 76px; background: #000; }
-        } */
     }
 
     .tab_inner_wrap {
@@ -1640,16 +1538,6 @@ header {
                     font-size: 22px;
                     letter-spacing: .15em;
                     font-weight: normal;
-
-                    /*타이핑 효과.. 지우려면 지우기*/
-                    /* overflow: hidden;
-                    display: block;
-                    animation: 
-                    typing 3.5s steps(30, end),
-                    blink-caret 1s step-end infinite;
-                    border-right: 1px solid black;
-                    white-space: nowrap; 
-                     */
                 }
             }
 
@@ -1735,7 +1623,6 @@ header {
                                     
                                 a {
                                     padding: 10px 30px;
-                                    /* background-color: #000; */
                                     box-sizing: border-box;
                                     border: 1px solid #000;
                                     background-color: rgba(255,255,255, 0.4);
@@ -1802,22 +1689,6 @@ header {
 }
 
 
-
-
-/*타이핑 애니메이션*/
-/* @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  } */
-  
-  /* The typewriter cursor effect */
-/*   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black }
-  } */
-
-
-
 .sns_area {
     width: 100%;
     height: 370px;
@@ -1825,16 +1696,6 @@ header {
     margin-bottom: 100px;
     position: relative;
     overflow: hidden;
-
-    /* .slide_wrap {
-
-        .slide_show {
-            width: 900px; height: 200px; overflow: hidden;
-            position: absolute;
-            left: 0; top: 0;
-             margin: auto;
-          }
-    } */
 
     .sns_tit {
         width: 1300px; height: 60px;
@@ -2092,15 +1953,6 @@ header {
 }
 
 
-
-
-
-
-  
-
-
-
-
 /*---------------------------footer---------------------------*/
 .footer {
     width: 100%; height: 350px;
@@ -2316,56 +2168,3 @@ header {
         width: 60%;
     }
 }
-
-  
-  /*slide*/
-  
-  /* 
-  .slide_show .slide_list {
-    position: relative;
-    overflow:hidden; width: 3300px; height: 360px;
-  }
-  .slide_show .slide_list > div {
-    float: left; width: 290px; padding: 5px; height: 174px;
-    box-sizing: content-box; position: relative;
-  }
-  .slide_show .slide_list > div:before {
-    position: absolute; left: 10px; top: 10px; color: #fff;
-    font-family: 'RIDIBatang';
-  }
-  .slide_list > div:nth-child(3n+1)::before {content:'01'}
-  .slide_list > div:nth-child(3n+2)::before {content:'02'}
-  .slide_list > div:nth-child(3n+3)::before {content:'03'}
-  
-  .slide_show .slide_list > div img {width: 100%;}
-  
-  .slide_btn {position: absolute; bottom: 0; left: 50%; transform: translatex(-50%);}
-  .slide_btn button {
-    background: rgba(0,0,0,.4);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: #fff;
-    border-radius: 50%;
-    width: 40px; height: 40px;
-    cursor: pointer;
-  }
-  .slide_btn button:hover {
-    background: rgba(0,0,0,.8);;
-  }
-  .slide_btn .prev {}
-  .slide_btn .next {} */
-
-
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-/*-------------------1-------------------*/
-
-
-/* display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden; */

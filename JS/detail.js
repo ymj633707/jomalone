@@ -95,44 +95,42 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', ()=> {
   const noteBtn = document.querySelector('.note_btn')
   const noteContent = document.querySelector('.note_box')
-  const noteActive = document.querySelector('.note_open')
-  const noteClose = document.querySelector('.note_close')
+  const notePlus = document.querySelector('.plusminus')
 
   let noteOpen = false
 
   noteBtn.addEventListener('click', function(){
       if(noteOpen===false) {
           noteContent.style.display = 'block'
-          noteClose.classList.remove('hidden')
-          noteActive.classList.add('hidden')
+          notePlus.classList.add('active')
           noteOpen = true
       } else {
           noteContent.style.display = 'none';
-          noteClose.classList.add('hidden')
-          noteActive.classList.remove('hidden')
+          notePlus.classList.remove('active')
           noteOpen = false
       }
   })
 })
+
+
+
+
 //detail_box02
 document.addEventListener('DOMContentLoaded', ()=> {
   const inBtn = document.querySelector('.in_btn')
   const inContent = document.querySelector('.in_box')
-  const inActive = document.querySelector('.in_open')
-  const inClose = document.querySelector('.in_close')
+  const inPlus = document.querySelector('.in_plus')
 
   let inOpen = false
 
   inBtn.addEventListener('click', function(){
       if(inOpen===false) {
         inContent.style.display = 'block';
-        inClose.classList.remove('hidden')
-        inActive.classList.add('hidden')
+        inPlus.classList.add('active')
         inOpen = true
       } else {
         inContent.style.display = 'none';
-          inClose.classList.add('hidden')
-          inActive.classList.remove('hidden')
+          inPlus.classList.remove('active')
           inOpen = false
       }
   })
@@ -142,21 +140,18 @@ document.addEventListener('DOMContentLoaded', ()=> {
 document.addEventListener('DOMContentLoaded', ()=> {
   const reBtn = document.querySelector('.review_btn')
   const reContent = document.querySelector('.riview_box')
-  const reActive = document.querySelector('.review_open')
-  const reClose = document.querySelector('.review_close')
+  const reviewPlus = document.querySelector('.review_plus')
 
   let reOpen = false
 
   reBtn.addEventListener('click', function(){
       if(reOpen===false) {
         reContent.style.display = 'block';
-        reClose.classList.remove('hidden')
-        reActive.classList.add('hidden')
+        reviewPlus.classList.add('active')
         reOpen = true
       } else {
         reContent.style.display = 'none';
-        reClose.classList.add('hidden')
-          reActive.classList.remove('hidden')
+        reviewPlus.classList.remove('active')
           reOpen = false
       }
   })

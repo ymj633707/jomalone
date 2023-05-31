@@ -57,26 +57,6 @@ body {
     font-weight: bold;
 }
 
-/* .wrap {
-
-    .new_product {
-        width: 1000px;
-        display: flex;
-        flex-wrap: wrap;
-
-        .new_box {
-            width: 300px;
-            margin: 10px;
-            border: 1px solid #000;
-
-         img {
-            display: block;
-            width: 280px; height: 280px;
-         }
-        }
-    }
-} */
-
 /*-------------------logo_box-------------------*/
 .header_wrap.drop {
     position: fixed;
@@ -262,7 +242,7 @@ header {
         left: 435px;
     }
     .sub_menu03 {
-        left: 555px;
+        left: 564px;
     }
     .sub_menu04 {
         left: 680px;
@@ -283,7 +263,6 @@ header {
             width: 95%;
             position: absolute;
             top: 23px; left: 0;
-
         }
 
     } /*search_box*/
@@ -320,10 +299,6 @@ header {
 
 } /*gnb_icon_area*/
 
-
-/* .lnb .main_lnb .lnb_item:hover .sub_menu_area {
-        display: block;
-    } */
 /*---------------------------search_area---------------------------*/
 .search_area {
     position: absolute;
@@ -351,7 +326,6 @@ header {
             padding: 10px 0;
             box-sizing: border-box;
             
-        
             a {
                 font-family: 'Bookk Myungjo';
                 font-weight: bold;
@@ -407,8 +381,6 @@ header {
                     width: 100%;
                 }
                }
-
-
             }
 
         } /*search_content*/
@@ -449,8 +421,6 @@ header {
             }
         }
     }
-
-    
 }
 
 /*---------------function_txt---------------*/
@@ -530,9 +500,6 @@ header {
     }
     
 }
-
-
-
 
 .wrap {
     margin-bottom: 80px;
@@ -783,16 +750,11 @@ header {
         text-align: center;
     }
 
-    
-
     p.page {
         background-color: #000;
         color: #fff;
     }
 }
-
-
-
 
 
 /*---------------------------footer---------------------------*/
