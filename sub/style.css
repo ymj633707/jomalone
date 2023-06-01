@@ -32,25 +32,6 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-/* .wrap {
-
-    .new_product {
-        width: 1000px;
-        display: flex;
-        flex-wrap: wrap;
-
-        .new_box {
-            width: 300px;
-            margin: 10px;
-            border: 1px solid #000;
-
-         img {
-            display: block;
-            width: 280px; height: 280px;
-         }
-        }
-    }
-} */
 /*-------------------logo_box-------------------*/
 .header_wrap.drop {
   position: fixed;
@@ -212,7 +193,7 @@ header {
   left: 435px;
 }
 .sub_menu_area .sub_menu03 {
-  left: 555px;
+  left: 564px;
 }
 .sub_menu_area .sub_menu04 {
   left: 680px;
@@ -269,9 +250,6 @@ header {
 }
 
 /*gnb_icon_area*/
-/* .lnb .main_lnb .lnb_item:hover .sub_menu_area {
-        display: block;
-    } */
 /*---------------------------search_area---------------------------*/
 .search_area {
   position: absolute;

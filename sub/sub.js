@@ -111,14 +111,11 @@ document.addEventListener("DOMContentLoaded", function() {
     item.style.display = (display === "block" ? "none" : "block");
   }
 
-  // Body 클릭 시 닫히도록 이벤트 처리
   document.body.addEventListener("click", function(event) {
-    // 클릭된 요소가 item1, item2, item3의 링크나 박스인지 확인
     let clickedElement = event.target;
     let isItemLink = [item1Link, item2Link, item3Link].includes(clickedElement);
     let isItemBox = [item1Box, item2Box, item3Box].includes(clickedElement);
 
-    // 클릭된 요소가 item1, item2, item3의 링크나 박스가 아니면 모든 박스를 닫음
     if (!isItemLink && !isItemBox) {
       let listBoxes = document.getElementsByClassName("list_box");
       for (let i = 0; i < listBoxes.length; i++) {
@@ -178,7 +175,7 @@ topBtn.addEventListener('click', () => {
     })
 }) /* 스크롤 위로 올릴때 */
 
-/* window.scroll_event */
+
 
 
 //cologne_modal
@@ -247,12 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sortBox.style.display = 'none'
       state = false
     }
-  })
-
-  
+  })  
 })
-
-
 
 const sortByName = document.getElementById('sortByName');
 const sortByPrice = document.getElementById('sortByPrice');
@@ -292,3 +285,14 @@ resetSort.addEventListener('click', function() {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var header = new XMLHttpRequest();
+  header.open("GET", "header.html", true);
+  header.onreadystatechange = function() {
+    if (header.readyState === 4 && header.status === 200) {
+      document.getElementById("header").innerHTML = header.responseText;
+    }
+  };
+  header.send();
+})

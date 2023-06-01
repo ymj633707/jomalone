@@ -1,4 +1,4 @@
-//롤링 배너 복제본 생성
+//롤링 배너 
 let roller = document.querySelector('.rolling_list');
 roller.id = 'roller1';
 
@@ -6,16 +6,12 @@ let clone = roller.cloneNode(true);
 clone.id = 'roller2';
 document.querySelector('.rolling_area').appendChild(clone); //부착
 
-//원본, 복제본 배너 위치 지정
 document.querySelector('#roller1').style.left = '0px';
 document.querySelector('#roller2').style.left = document.querySelector('.rolling_list ul').offsetWidth+'px';
 
-//클래스 할당
 roller.classList.add('original');
 clone.classList.add('clone');
 
-
-//롤링배너 닫기 버튼
 document.getElementById('close').addEventListener('click', function(){
     document.getElementById('alert').style.display ='none';
 });
@@ -112,10 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bgc2.classList.remove('hidden')
     bgc3.classList.add('on')
     bgc3.classList.remove('hidden')
-   
   })
-
-
 })
 
 /*tab_menu*/
@@ -162,7 +155,7 @@ topBtn.addEventListener('click', () => {
 /* window.scroll_event */
 
 
-//
+//best_modal
 let bestItems = document.querySelectorAll('.best_hover')
 
 let bestModals = document.querySelectorAll('.best_modal')
@@ -200,22 +193,7 @@ bestBgs.forEach(function(bestBg) {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
- // 리스트 항목 요소들
  let listItems = document.querySelectorAll('.swiper-slide');
-
- // 모달창 요소들
  let modals = document.querySelectorAll('.modal');
  
  // 리스트 항목 클릭 이벤트 처리
@@ -308,23 +286,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-
-/* let bodyElements = document.body;
-bodyElements.forEach(function(bodyElement) {
-  bodyElement.addEventListener('click', function(){
-bodyElements.forEach(function(bodyElement) {
-  let listBox = bodyElement.closest('.list_box');
-  listBox.style.display = 'none';
-  })
-}) */
-
-
-
-
-
-
-
+//header_scroll
 let header = document.querySelector('.header_wrap')
 let headerHeight = header.offsetHeight;
 
@@ -353,6 +315,7 @@ $(document).ready(function() {
   })
 
 
+  //swiper 옵션
   const swiper = new Swiper(".mySwiper", {
     loop: true,
     spaceBetween: 10,
@@ -399,6 +362,7 @@ $(document).ready(function() {
 });
 
 
+//test
 var currentQuestion = 0;
 var selectedOptions = {
   question1: null,
@@ -411,13 +375,11 @@ function selectOption(question, option) {
   var otherOption = (option === 'option1') ? 'option2' : 'option1';
   selectedOptions[question] = option;
   
-  // 다른 옵션 체크 해제
   var otherOptionElement = document.querySelector('input[name="' + question + '"][value="' + otherOption + '"]');
   otherOptionElement.checked = false;
 }
 
 function startTest() {
-  // 시작 페이지 숨기고 첫 번째 질문 보이기
   var startPage = document.getElementById("start");
   startPage.style.display = "none";
   
@@ -427,21 +389,17 @@ function startTest() {
 function showQuestion() {
   var questions = document.getElementsByClassName("question");
   
-  // 현재 질문 숨기기
   if (currentQuestion > 0) {
     questions[currentQuestion - 1].style.display = "none";
   }
   
-  // 다음 질문으로 이동
   currentQuestion++;
   
-  // 모든 질문에 답변을 완료한 경우 결과 보여주기
   if (currentQuestion > questions.length) {
     showResult();
     return;
   }
   
-  // 다음 질문 보이기
   questions[currentQuestion - 1].style.display = "block";
 }
 
@@ -449,7 +407,6 @@ function showResult() {
   var resultDiv1 = document.getElementById("result1");
   var resultDiv2 = document.getElementById("result2");
 
-  // 선택된 옵션 개수 계산
   var option1Count = 0;
   var option2Count = 0;
 
@@ -461,7 +418,6 @@ function showResult() {
     }
   }
 
-  // 결과 페이지 보여주기
   if (option1Count >= option2Count) {
     resultDiv1.style.display = "block";
     resultDiv2.style.display = "none";
