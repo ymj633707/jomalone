@@ -212,21 +212,21 @@ bgs.forEach(function(bg) {
 
 //sort
 document.addEventListener('DOMContentLoaded', () => {
-  const  sortBtn = document.querySelector('.sort_area')
-  const  sortBox = document.querySelector('.sort_box')
+  const sortBtn = document.querySelector('.sort_area');
+  const sortBox = document.querySelector('.sort_box');
+  let state = false;
 
-  let state = false
+  sortBtn.addEventListener('mouseover', function () {
+    sortBox.style.display = 'block';
+    state = true;
+  });
 
-  sortBtn.addEventListener('click', function(){
-    if(!state) {
-      sortBox.style.display = 'block'
-      state=true
-    } else if(state) {
-      sortBox.style.display = 'none'
-      state = false
-    }
-  })  
-})
+  sortBox.addEventListener('mouseleave', function () {
+    sortBox.style.display = 'none';
+    state = false;
+  });
+});
+
 
 const sortByName = document.getElementById('sortByName');
 const sortByPrice = document.getElementById('sortByPrice');

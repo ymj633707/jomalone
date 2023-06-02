@@ -252,13 +252,10 @@ function getToday() {
 
 
 //sns_swiper
-// 리스트 항목 요소들
 let listItems = document.querySelectorAll('.swiper-slide');
 
-// 모달창 요소들
 let modals = document.querySelectorAll('.modal');
 
-// 리스트 항목 클릭 이벤트 처리
 listItems.forEach(function(listItem) {
 listItem.addEventListener("click", function() {
 let modalId = listItem.getAttribute("data-modal");
@@ -266,7 +263,6 @@ showSpecificModal(modalId);
 });
 });
 
-// 특정 모달창만 표시하는 함수
 function showSpecificModal(modalId) {
 modals.forEach(function(modal) {
 if (modal.id === modalId) {
@@ -277,7 +273,6 @@ if (modal.id === modalId) {
 });
 }
 
-// 닫기 버튼 클릭 이벤트 처리
 let closeBtns = document.querySelectorAll('.closeBtn');
 closeBtns.forEach(function(closeBtn) {
   closeBtn.addEventListener("click", function() {
@@ -329,14 +324,11 @@ document.addEventListener("DOMContentLoaded", function() {
     item.style.display = (display === "block" ? "none" : "block");
   }
 
-  // Body 클릭 시 닫히도록 이벤트 처리
   document.body.addEventListener("click", function(event) {
-    // 클릭된 요소가 item1, item2, item3의 링크나 박스인지 확인
     let clickedElement = event.target;
     let isItemLink = [item1Link, item2Link, item3Link].includes(clickedElement);
     let isItemBox = [item1Box, item2Box, item3Box].includes(clickedElement);
 
-    // 클릭된 요소가 item1, item2, item3의 링크나 박스가 아니면 모든 박스를 닫음
     if (!isItemLink && !isItemBox) {
       let listBoxes = document.getElementsByClassName("list_box");
       for (let i = 0; i < listBoxes.length; i++) {
@@ -346,35 +338,31 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
+//cart_price
 window.onload = function() {
-  var sellPrice = 110000; // 판매 가격
-  var amountInput = document.getElementsByName("amount")[0];
-  var sumOutput = document.getElementsByName("sum")[0];
+  let sellPrice = 110000; // 판매 가격
+  let amountInput = document.getElementsByName("amount")[0];
+  let sumOutput = document.getElementsByName("sum")[0];
 
-  // 초기값 설정
   amountInput.value = 1;
   sumOutput.value = sellPrice.toLocaleString();
 
-  // 수량 증가 버튼 클릭 시 이벤트 핸들러
   document.getElementsByName("add")[0].onclick = function() {
-    var quantity = parseInt(amountInput.value) + 1;
+    let quantity = parseInt(amountInput.value) + 1;
     amountInput.value = quantity;
     calculateTotal(quantity);
   }
 
-  // 수량 감소 버튼 클릭 시 이벤트 핸들러
   document.getElementsByName("minus")[0].onclick = function() {
-    var quantity = parseInt(amountInput.value) - 1;
+    let quantity = parseInt(amountInput.value) - 1;
     if (quantity >= 1) {
       amountInput.value = quantity;
       calculateTotal(quantity);
     }
   }
 
-  // 합계 금액 계산 및 업데이트 함수
   function calculateTotal(quantity) {
-    var total = sellPrice * quantity;
+    let total = sellPrice * quantity;
     sumOutput.value = total.toLocaleString();
   }
 }
@@ -394,11 +382,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 })
 
-
-
-
-
-
+//swiper option
 const swiper = new Swiper(".mySwiper", {
   loop: true,
   spaceBetween: 10,
