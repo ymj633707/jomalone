@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
   })
 })
 
+
+
+
 //detail_box02
 document.addEventListener('DOMContentLoaded', ()=> {
   const inBtn = document.querySelector('.in_btn')
@@ -136,7 +139,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 //review_area
 document.addEventListener('DOMContentLoaded', ()=> {
   const reBtn = document.querySelector('.review_btn')
-  const reContent = document.querySelector('.review_box')
+  const reContent = document.querySelector('.riview_box')
   const reviewPlus = document.querySelector('.review_plus')
 
   let reOpen = false
@@ -153,6 +156,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
       }
   })
 })
+
 
 //part02
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -200,6 +204,7 @@ function uploadPhoto() {
 function displayPhoto(imageUrl, description, today) {
   const photoItem = document.createElement('div');  //리뷰div 생성
   photoItem.classList.add('photo-item');
+  /* photoItem.dataset.id = reviewId; */
 
   const image = document.createElement('img'); 
   image.src = imageUrl; //이미지 url 설정
@@ -221,6 +226,7 @@ function displayPhoto(imageUrl, description, today) {
   photoItem.appendChild(deleteButton);
   gallery.appendChild(photoItem);
 
+  /* reviewId++; */
 }
 
 function deletePhoto(event) {
@@ -246,10 +252,13 @@ function getToday() {
 
 
 //sns_swiper
+// 리스트 항목 요소들
 let listItems = document.querySelectorAll('.swiper-slide');
 
+// 모달창 요소들
 let modals = document.querySelectorAll('.modal');
 
+// 리스트 항목 클릭 이벤트 처리
 listItems.forEach(function(listItem) {
 listItem.addEventListener("click", function() {
 let modalId = listItem.getAttribute("data-modal");
@@ -257,6 +266,7 @@ showSpecificModal(modalId);
 });
 });
 
+// 특정 모달창만 표시하는 함수
 function showSpecificModal(modalId) {
 modals.forEach(function(modal) {
 if (modal.id === modalId) {
@@ -267,6 +277,7 @@ if (modal.id === modalId) {
 });
 }
 
+// 닫기 버튼 클릭 이벤트 처리
 let closeBtns = document.querySelectorAll('.closeBtn');
 closeBtns.forEach(function(closeBtn) {
   closeBtn.addEventListener("click", function() {
@@ -275,6 +286,7 @@ closeBtns.forEach(function(closeBtn) {
   });
 });
 
+// 배경 클릭 이벤트 처리
 let bgs = document.querySelectorAll('.bg');
 bgs.forEach(function(bg) {
  bg.addEventListener("click", function() {
@@ -319,10 +331,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Body 클릭 시 닫히도록 이벤트 처리
   document.body.addEventListener("click", function(event) {
+    // 클릭된 요소가 item1, item2, item3의 링크나 박스인지 확인
     let clickedElement = event.target;
     let isItemLink = [item1Link, item2Link, item3Link].includes(clickedElement);
     let isItemBox = [item1Box, item2Box, item3Box].includes(clickedElement);
 
+    // 클릭된 요소가 item1, item2, item3의 링크나 박스가 아니면 모든 박스를 닫음
     if (!isItemLink && !isItemBox) {
       let listBoxes = document.getElementsByClassName("list_box");
       for (let i = 0; i < listBoxes.length; i++) {
@@ -380,7 +394,11 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 })
 
-//swiper option
+
+
+
+
+
 const swiper = new Swiper(".mySwiper", {
   loop: true,
   spaceBetween: 10,
@@ -389,6 +407,10 @@ const swiper = new Swiper(".mySwiper", {
   watchSlidesProgress: true,
 });
 const swiper2 = new Swiper(".mySwiper2", {
+/*   autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  }, */
   loop: true,
   spaceBetween: 10,
   navigation: {
@@ -399,6 +421,7 @@ const swiper2 = new Swiper(".mySwiper2", {
     swiper: swiper,
   },
 });  
+
 
 var swiper3 = new Swiper(".box02", {
   slidesPerView: 5,
