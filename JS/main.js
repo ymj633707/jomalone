@@ -54,62 +54,38 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.promotion_content > img').setAttribute('src', imgSrc)
   })
 
-  const bgc1 = document.querySelector('.bgc1')
-  const bgc2 = document.querySelector('.bgc2')
-  const bgc3 = document.querySelector('.bgc3')
-  const bgc4 = document.querySelector('.bgc4')
-
-  document.querySelector('.promotion_txt01').addEventListener('mouseover', function(){
-    bgc1.classList.remove('on')
-    bgc1.classList.add('hidden')
-
-    bgc2.classList.add('on')
-    bgc2.classList.remove('hidden')
-    bgc3.classList.add('on')
-    bgc3.classList.remove('hidden')
-    bgc4.classList.add('on')
-    bgc4.classList.remove('hidden')
-   
-  })
-
-  document.querySelector('.promotion_txt02').addEventListener('mouseover', function(){
-    bgc2.classList.remove('on')
-    bgc2.classList.add('hidden')
-
-    bgc1.classList.add('on')
-    bgc1.classList.remove('hidden')
-    bgc3.classList.add('on')
-    bgc3.classList.remove('hidden')
-    bgc4.classList.add('on')
-    bgc4.classList.remove('hidden')
-   
-  })
-
-  document.querySelector('.promotion_txt03').addEventListener('mouseover', function(){
-    bgc3.classList.remove('on')
-    bgc3.classList.add('hidden')
-
-    bgc1.classList.add('on')
-    bgc1.classList.remove('hidden')
-    bgc2.classList.add('on')
-    bgc2.classList.remove('hidden')
-    bgc4.classList.add('on')
-    bgc4.classList.remove('hidden')
-   
-  })
-
-  document.querySelector('.promotion_txt04').addEventListener('mouseover', function(){
-    bgc4.classList.remove('on')
-    bgc4.classList.add('hidden')
-
-    bgc1.classList.add('on')
-    bgc1.classList.remove('hidden')
-    bgc2.classList.add('on')
-    bgc2.classList.remove('hidden')
-    bgc3.classList.add('on')
-    bgc3.classList.remove('hidden')
-  })
 })
+
+const promotionTexts = document.querySelectorAll('.promotion_txt');
+const bgcs = document.querySelectorAll('.bgc');
+let lastHoveredIndex = null;
+
+promotionTexts.forEach((text, index) => {
+  text.addEventListener('mouseover', () => {
+    bgcs.forEach((bgc) => {
+      bgc.classList.add('on');
+      bgc.classList.remove('hidden');
+    });
+    bgcs[index].classList.add('hidden');
+    lastHoveredIndex = index;
+  });
+
+  text.addEventListener('mouseout', () => {
+    bgcs.forEach((bgc) => {
+      bgc.classList.add('on');
+      bgc.classList.remove('hidden');
+    });
+    if (lastHoveredIndex !== null) {
+      bgcs[lastHoveredIndex].classList.add('hidden');
+    }
+  });
+});
+
+
+
+
+
+
 
 /*tab_menu*/
 const tabItem = document.querySelectorAll('.tab_item')
