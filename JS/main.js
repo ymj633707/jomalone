@@ -152,9 +152,6 @@ topBtn.addEventListener('click', () => {
     })
 }) /* 스크롤 위로 올릴때 */
 
-/* window.scroll_event */
-
-
 //best_modal
 let bestItems = document.querySelectorAll('.best_hover')
 
@@ -268,14 +265,12 @@ document.addEventListener("DOMContentLoaded", function() {
     item.style.display = (display === "block" ? "none" : "block");
   }
 
-  // Body 클릭 시 닫히도록 이벤트 처리
+  // Body 클릭 시 display:none
   document.body.addEventListener("click", function(event) {
-    // 클릭된 요소가 item1, item2, item3의 링크나 박스인지 확인
     let clickedElement = event.target;
     let isItemLink = [item1Link, item2Link, item3Link].includes(clickedElement);
     let isItemBox = [item1Box, item2Box, item3Box].includes(clickedElement);
 
-    // 클릭된 요소가 item1, item2, item3의 링크나 박스가 아니면 모든 박스를 닫음
     if (!isItemLink && !isItemBox) {
       let listBoxes = document.getElementsByClassName("list_box");
       for (let i = 0; i < listBoxes.length; i++) {

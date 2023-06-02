@@ -50,10 +50,7 @@ for (let i=0; i<shoppingList.length; i++) { //shoppingList 길이만큼 for를 �
     colognePrice.appendChild(colognePriceText);
     cologneDiv.appendChild(colognePrice);
     
-
     cologneProduct.appendChild(cologneDiv)
-
-   
 
 }//shoppingList_for
 
@@ -63,6 +60,7 @@ $(".main_lnb li").hover(function() {
     $(this).children(".sub_menu_area").stop().slideToggle(300)
   })
 
+//search_box
   document.addEventListener('DOMContentLoaded', () => { 
     const searchIcon = document.getElementById('search_icon')
     const searchClose = document.querySelector('.search_close')
@@ -74,7 +72,6 @@ $(".main_lnb li").hover(function() {
     searchClose.addEventListener('click', function(){
       document.querySelector('.search_area').style.height = 0
     })
-
 })
 
 //footer list
@@ -175,9 +172,6 @@ topBtn.addEventListener('click', () => {
     })
 }) /* 스크롤 위로 올릴때 */
 
-
-
-
 //cologne_modal
 let items = document.querySelectorAll('.cologne_hover')
 
@@ -215,19 +209,6 @@ bgs.forEach(function(bg) {
   });
 });
 
-//search_area
-document.addEventListener('DOMContentLoaded', () => { 
-  const searchIcon = document.getElementById('search_icon')
-  const searchClose = document.querySelector('.search_close')
-
-  searchIcon.addEventListener('click', function() {
-    document.querySelector('.search_area').style.height = 340 + 'px'
-  })
-
-  searchClose.addEventListener('click', function(){
-    document.querySelector('.search_area').style.height = 0
-  })
-})
 
 //sort
 document.addEventListener('DOMContentLoaded', () => {
@@ -285,14 +266,3 @@ resetSort.addEventListener('click', function() {
   });
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-  var header = new XMLHttpRequest();
-  header.open("GET", "header.html", true);
-  header.onreadystatechange = function() {
-    if (header.readyState === 4 && header.status === 200) {
-      document.getElementById("header").innerHTML = header.responseText;
-    }
-  };
-  header.send();
-})
