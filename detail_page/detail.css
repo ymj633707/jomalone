@@ -1146,6 +1146,72 @@ header {
   color: #fff;
 }
 
+.parcel {
+  width: 1080px;
+  height: auto;
+  margin: 0 auto;
+  border-bottom: 1px solid #000;
+  box-sizing: border-box;
+}
+.parcel .parcel_btn {
+  margin-left: 35px;
+  cursor: pointer;
+  padding: 40px 0px;
+  box-sizing: border-box;
+  position: relative;
+}
+.parcel .parcel_btn p {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+}
+.parcel .parcel_btn .parcel_plus {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.parcel .parcel_btn .parcel_plus.active:before {
+  transform: translatey(-50%) rotate(-90deg);
+  opacity: 0;
+}
+.parcel .parcel_btn .parcel_plus.active:after {
+  transform: translatey(-50%) rotate(0);
+}
+.parcel .parcel_btn .parcel_plus:before, .parcel .parcel_btn .parcel_plus:after {
+  content: "";
+  display: block;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: 0.35s;
+  width: 100%;
+  height: 2px;
+}
+.parcel .parcel_btn .parcel_plus:before {
+  transform: translatey(-50%);
+}
+.parcel .parcel_btn .parcel_plus:after {
+  transform: translatey(-50%) rotate(90deg);
+}
+.parcel .parcel_box {
+  display: none;
+}
+.parcel .parcel_box > div {
+  margin-bottom: 60px;
+}
+.parcel .parcel_box > div p {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-size: 14px;
+}
+.parcel .parcel_box > div .strong {
+  font-weight: bold;
+}
+
 .suggestion {
   width: 1080px;
   height: auto;

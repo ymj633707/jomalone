@@ -1,5 +1,5 @@
 //롤링 배너 
-let roller = document.querySelector('.rolling_list');
+const roller = document.querySelector('.rolling_list');
 roller.id = 'roller1';
 
 let clone = roller.cloneNode(true);
@@ -18,7 +18,7 @@ document.getElementById('close').addEventListener('click', function(){
 
 
 //search_area
-document.addEventListener('DOMContentLoaded', () => { 
+
   const searchIcon = document.getElementById('search_icon')
   const searchClose = document.querySelector('.search_close')
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.promotion_content > img').setAttribute('src', imgSrc)
   })
 
-})
+
 
 const promotionTexts = document.querySelectorAll('.promotion_txt');
 const bgcs = document.querySelectorAll('.bgc');
@@ -129,9 +129,9 @@ topBtn.addEventListener('click', () => {
 }) /* 스크롤 위로 올릴때 */
 
 //best_modal
-let bestItems = document.querySelectorAll('.best_hover')
+const bestItems = document.querySelectorAll('.best_hover')
 
-let bestModals = document.querySelectorAll('.best_modal')
+const bestModals = document.querySelectorAll('.best_modal')
 
 bestItems.forEach(function(bestItem){
   bestItem.addEventListener('click', function(){
@@ -150,7 +150,7 @@ function showBestModal(bestId) {
   });
 }
 
-let bestCloses = document.querySelectorAll('.best_close');
+const bestCloses = document.querySelectorAll('.best_close');
 bestCloses.forEach(function(bestClose) {
   bestClose.addEventListener('click', function(){
     let modal = bestClose.closest('.best_modal');
@@ -166,8 +166,8 @@ bestBgs.forEach(function(bestBg) {
   });
 });
 
- let listItems = document.querySelectorAll('.swiper-slide');
- let modals = document.querySelectorAll('.modal');
+ const listItems = document.querySelectorAll('.swiper-slide');
+ const modals = document.querySelectorAll('.modal');
  
  // 리스트 항목 클릭 이벤트 처리
  listItems.forEach(function(listItem) {
@@ -189,7 +189,7 @@ bestBgs.forEach(function(bestBg) {
  }
 
  // 닫기 버튼 클릭 이벤트 처리
- let closeBtns = document.querySelectorAll('.closeBtn');
+ const closeBtns = document.querySelectorAll('.closeBtn');
  closeBtns.forEach(function(closeBtn) {
    closeBtn.addEventListener("click", function() {
      let modal = closeBtn.closest('.modal');
@@ -208,14 +208,13 @@ bgs.forEach(function(bg) {
 
 
 //footer list
-document.addEventListener("DOMContentLoaded", function() {
-  let item1Link = document.getElementById("item1-link");
-  let item2Link = document.getElementById("item2-link");
-  let item3Link = document.getElementById("item3-link");
+  const item1Link = document.getElementById("item1-link");
+  const item2Link = document.getElementById("item2-link");
+  const item3Link = document.getElementById("item3-link");
 
-  let item1Box = document.getElementById("item1");
-  let item2Box = document.getElementById("item2");
-  let item3Box = document.getElementById("item3");
+  const item1Box = document.getElementById("item1");
+  const item2Box = document.getElementById("item2");
+  const item3Box = document.getElementById("item3");
 
   item1Link.addEventListener("click", function(event) {
     event.preventDefault();
@@ -234,13 +233,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function toggleItem(item) {
     let display = item.style.display;
-    let listBoxes = document.getElementsByClassName("list_box");
+    const listBoxes = document.getElementsByClassName("list_box");
     for (let i = 0; i < listBoxes.length; i++) {
       listBoxes[i].style.display = "none";
     }
-    item.style.display = (display === "block" ? "none" : "block");
+    if (display === "block") {
+      item.style.display = "none";
+    } else {
+      item.style.display = "block";
+    }
   }
-
+  
   // Body 클릭 시 display:none
   document.body.addEventListener("click", function(event) {
     let clickedElement = event.target;
@@ -254,36 +257,23 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
-});
+
 
 
 //header_scroll
-let header = document.querySelector('.header_wrap')
+const header = document.querySelector('.header_wrap')
 let headerHeight = header.offsetHeight;
 
-window.onscroll = function () {
+window.addEventListener('scroll', function(){
   let windowTop = window.scrollY;
   if (windowTop >= headerHeight) {
     header.classList.add("drop");
   } else {
     header.classList.remove("drop");
   }
-};
+});
 
 
-
-//**제이쿼리
-
-//main_visual
-$(document).ready(function() {
-    $('[data-vbg]').youtube_background(); // 실행
-  });
-
-
-//sub_menu
-  $(".main_lnb li").hover(function() {
-    $(this).children(".sub_menu_area").stop().slideToggle(300)
-  })
 
 
   //swiper 옵션
@@ -334,8 +324,8 @@ $(document).ready(function() {
 
 
 //test
-var currentQuestion = 0;
-var selectedOptions = {
+let currentQuestion = 0;
+let selectedOptions = {
   question1: null,
   question2: null
 };
@@ -343,22 +333,29 @@ var selectedOptions = {
 function selectOption(question, option) {
   selectedOptions[question] = option;
   
-  var otherOption = (option === 'option1') ? 'option2' : 'option1';
+  let otherOption;
+  if (option === 'option1') {
+    otherOption = 'option2';
+  } else {
+    otherOption = 'option1';
+  }
+  
   selectedOptions[question] = option;
   
-  var otherOptionElement = document.querySelector('input[name="' + question + '"][value="' + otherOption + '"]');
+  let otherOptionElement = document.querySelector('input[name="' + question + '"][value="' + otherOption + '"]');
   otherOptionElement.checked = false;
 }
 
+
 function startTest() {
-  var startPage = document.getElementById("start");
+  const startPage = document.getElementById("start");
   startPage.style.display = "none";
   
   showQuestion();
 }
 
 function showQuestion() {
-  var questions = document.getElementsByClassName("question");
+  const questions = document.getElementsByClassName("question");
   
   if (currentQuestion > 0) {
     questions[currentQuestion - 1].style.display = "none";
@@ -375,13 +372,13 @@ function showQuestion() {
 }
 
 function showResult() {
-  var resultDiv1 = document.getElementById("result1");
-  var resultDiv2 = document.getElementById("result2");
+  const resultDiv1 = document.getElementById("result1");
+  const resultDiv2 = document.getElementById("result2");
 
-  var option1Count = 0;
-  var option2Count = 0;
+  let option1Count = 0;
+  let option2Count = 0;
 
-  for (var question in selectedOptions) {
+  for (let question in selectedOptions) { 
     if (selectedOptions[question] === 'option1') {
       option1Count++;
     } else if (selectedOptions[question] === 'option2') {
@@ -397,3 +394,13 @@ function showResult() {
     resultDiv2.style.display = "block";
   } 
 }
+
+
+
+//**제이쿼리
+//sub_menu
+$(function(){
+$(".main_lnb li").hover(function() {
+  $(this).children(".sub_menu_area").stop().slideToggle(300)
+})
+})

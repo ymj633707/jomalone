@@ -20,46 +20,35 @@ topBtn.addEventListener('click', () => {
     })
 }) /* 스크롤 위로 올릴때 */
 
-/* window.scroll_event */
-
-      //sub_menu
-      $(".main_lnb li").hover(function() {
-        $(this).children(".sub_menu_area").stop().slideToggle(300)
-      })
-
-
-
 // lnb_scroll
-
 let header = document.querySelector('.header_wrap')
 let headerHeight = header.offsetHeight;
 
-window.onscroll = function () {
+window.addEventListener('scroll', function(){
   let windowTop = window.scrollY;
   if (windowTop >= headerHeight) {
     header.classList.add("drop");
   } else {
     header.classList.remove("drop");
   }
-};
+});
 
 //header-wrap border
 const lnbItems = document.querySelectorAll('#main_lnb .lnb_item');
 
 lnbItems.forEach((lnbItem) => {
   lnbItem.addEventListener('mouseover', () => {
-    const headerWrap = document.getElementById('header_wrap');
+    let headerWrap = document.getElementById('header_wrap');
     headerWrap.style.border = 'none';
   });
 
   lnbItem.addEventListener('mouseout', () => {
-    const headerWrap = document.getElementById('header_wrap');
+    let headerWrap = document.getElementById('header_wrap');
     headerWrap.style.border = '';
   });
 });
 
 //option_box
-document.addEventListener('DOMContentLoaded', ()=> {
   const optionBtn = document.querySelector('.detail_option')
   const optionBox = document.querySelector('.option_box')
 
@@ -74,10 +63,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
       optionOpen = false
     }
   })
-})
+
 
 //search_area
-document.addEventListener('DOMContentLoaded', () => { 
+
   const searchIcon = document.getElementById('search_icon')
   const searchClose = document.querySelector('.search_close')
 
@@ -88,11 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
   searchClose.addEventListener('click', function(){
     document.querySelector('.search_area').style.height = 0
   })
-});
 
 
 //detail_box01
-document.addEventListener('DOMContentLoaded', ()=> {
   const noteBtn = document.querySelector('.note_btn')
   const noteContent = document.querySelector('.note_box')
   const notePlus = document.querySelector('.plusminus')
@@ -110,13 +97,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
           noteOpen = false
       }
   })
-})
-
-
-
 
 //detail_box02
-document.addEventListener('DOMContentLoaded', ()=> {
   const inBtn = document.querySelector('.in_btn')
   const inContent = document.querySelector('.in_box')
   const inPlus = document.querySelector('.in_plus')
@@ -134,10 +116,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
           inOpen = false
       }
   })
-})
 
 //review_area
-document.addEventListener('DOMContentLoaded', ()=> {
   const reBtn = document.querySelector('.review_btn')
   const reContent = document.querySelector('.riview_box')
   const reviewPlus = document.querySelector('.review_plus')
@@ -155,26 +135,42 @@ document.addEventListener('DOMContentLoaded', ()=> {
           reOpen = false
       }
   })
-})
-
 
 //part02
-document.addEventListener('DOMContentLoaded', ()=> {
   const partBtn = document.querySelector('.part02')
   const reviewTxt = document.querySelector('.review_txt')
 
-  let reOpen = false
+  let reOpen2 = false
 
   partBtn.addEventListener('click', function(){
-    if(reOpen === false) {
+    if(reOpen2 === false) {
       reviewTxt.style.display = 'block';
       reOpen = true
     } else {
       reviewTxt.style.display = 'none';
-      reOpen = false
-    }
+      reOpen2 = false
+    } 
   })
-})
+
+  //parcel
+  const paBtn = document.querySelector('.parcel_btn')
+  const paContent = document.querySelector('.parcel_box')
+  const paPlus = document.querySelector('.parcel_plus')
+
+  let paOpen = false
+
+  paBtn.addEventListener('click', function(){
+      if(paOpen===false) {
+        paContent.style.display = 'block';
+        paPlus.classList.add('active')
+        paOpen = true
+      } else {
+        paContent.style.display = 'none';
+        paPlus.classList.remove('active')
+          paOpen = false
+      }
+  })
+
 
 //Review_content
 const photoInput = document.getElementById('photo-input');
@@ -204,7 +200,6 @@ function uploadPhoto() {
 function displayPhoto(imageUrl, description, today) {
   const photoItem = document.createElement('div');  //리뷰div 생성
   photoItem.classList.add('photo-item');
-  /* photoItem.dataset.id = reviewId; */
 
   const image = document.createElement('img'); 
   image.src = imageUrl; //이미지 url 설정
@@ -225,8 +220,6 @@ function displayPhoto(imageUrl, description, today) {
   deleteButton.addEventListener('click', deletePhoto);
   photoItem.appendChild(deleteButton);
   gallery.appendChild(photoItem);
-
-  /* reviewId++; */
 }
 
 function deletePhoto(event) {
@@ -252,28 +245,27 @@ function getToday() {
 
 
 //sns_swiper
-let listItems = document.querySelectorAll('.swiper-slide');
-
-let modals = document.querySelectorAll('.modal');
+const listItems = document.querySelectorAll('.swiper-slide');
+const modals = document.querySelectorAll('.modal');
 
 listItems.forEach(function(listItem) {
-listItem.addEventListener("click", function() {
-let modalId = listItem.getAttribute("data-modal");
-showSpecificModal(modalId);
-});
+  listItem.addEventListener("click", function() {
+    let modalId = listItem.getAttribute("data-modal");
+    showSpecificModal(modalId);
+  });
 });
 
 function showSpecificModal(modalId) {
-modals.forEach(function(modal) {
-if (modal.id === modalId) {
-  modal.style.display = "block";
-} else {
-  modal.style.display = "none";
-}
-});
+  modals.forEach(function(modal) {
+    if (modal.id === modalId) {
+      modal.style.display = "block";
+    } else {
+      modal.style.display = "none";
+    }
+  });
 }
 
-let closeBtns = document.querySelectorAll('.closeBtn');
+const closeBtns = document.querySelectorAll('.closeBtn');
 closeBtns.forEach(function(closeBtn) {
   closeBtn.addEventListener("click", function() {
     let modal = closeBtn.closest('.modal');
@@ -282,7 +274,7 @@ closeBtns.forEach(function(closeBtn) {
 });
 
 // 배경 클릭 이벤트 처리
-let bgs = document.querySelectorAll('.bg');
+const bgs = document.querySelectorAll('.bg');
 bgs.forEach(function(bg) {
  bg.addEventListener("click", function() {
    let modal = bg.closest('.modal');
@@ -291,8 +283,8 @@ bgs.forEach(function(bg) {
 });
 
 //footer list
-document.addEventListener("DOMContentLoaded", function() {
-  let item1Link = document.getElementById("item1-link");
+
+  const item1Link = document.getElementById("item1-link");
   let item2Link = document.getElementById("item2-link");
   let item3Link = document.getElementById("item3-link");
 
@@ -317,11 +309,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function toggleItem(item) {
     let display = item.style.display;
-    let listBoxes = document.getElementsByClassName("list_box");
+    const listBoxes = document.getElementsByClassName("list_box");
     for (let i = 0; i < listBoxes.length; i++) {
       listBoxes[i].style.display = "none";
     }
-    item.style.display = (display === "block" ? "none" : "block");
+    if (display === "block") {
+      item.style.display = "none";
+    } else {
+      item.style.display = "block";
+    }
   }
 
   document.body.addEventListener("click", function(event) {
@@ -336,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
-});
+
 
 //cart_price
 window.onload = function() {
@@ -367,9 +363,8 @@ window.onload = function() {
   }
 }
 
-
 //cart
-document.addEventListener("DOMContentLoaded", function() {
+
   const cartBtn = document.querySelector('.cart_btn')
   const detailCart = document.querySelector('.detail_cart')
   const cartClose = document.querySelector('.close_btn')
@@ -380,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cartClose.addEventListener('click', function(){
     detailCart.style.display = 'none'
   })
-})
+
 
 //swiper option
 const swiper = new Swiper(".mySwiper", {
@@ -406,8 +401,7 @@ const swiper2 = new Swiper(".mySwiper2", {
   },
 });  
 
-
-var swiper3 = new Swiper(".box02", {
+const swiper3 = new Swiper(".box02", {
   slidesPerView: 5,
   spaceBetween: 20,
   navigation: {
@@ -428,4 +422,10 @@ const swiper4 = new Swiper(".snsSwiper", {
 });
 
 
-
+//**제이쿼리
+//sub_menu
+$(function(){
+  $(".main_lnb li").hover(function() {
+    $(this).children(".sub_menu_area").stop().slideToggle(300)
+  })
+})

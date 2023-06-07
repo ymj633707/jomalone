@@ -375,7 +375,6 @@ header {
   height: 0px;
   background-color: #FCF9EE;
   z-index: 2;
-  /* display: none; */
   overflow: hidden;
   transition: all 0.3s;
 }
@@ -1378,7 +1377,7 @@ header {
   width: 20%;
 }
 .tab_menu .tab_item.active {
-  background-color: #fdf7e3;
+  background-color: #fff4d1;
   color: #000;
 }
 .tab_menu .tab_item.active span::before {

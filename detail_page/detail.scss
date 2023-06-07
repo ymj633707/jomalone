@@ -1264,6 +1264,87 @@ header {
     color: #fff;
   }
 
+  .parcel {
+    width: 1080px; 
+    height: auto;
+    margin: 0 auto;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+
+    .parcel_btn {
+        margin-left: 35px;
+        cursor: pointer;
+        padding: 40px 0px;
+        box-sizing: border-box;
+        position: relative;
+
+        p {
+            @include kotra();
+        }
+
+        .parcel_plus {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px; top: 50%;
+            transform: translateY(-50%);
+            
+            &.active {
+                &:before {
+                    transform: translatey(-50%) rotate(-90deg);
+                    opacity: 0;
+                }
+                &:after {
+                    transform: translatey(-50%) rotate(0);
+                }
+            }
+            
+            &:before , &:after {
+                content: "";
+                display: block;
+                background-color: #333;
+                position: absolute;		
+                top: 50%; left: 0;
+                transition: .35s;
+                width: 100%;
+                height: 2px;
+            }
+            
+            &:before {		
+                transform: translatey(-50%);
+            }
+            
+            &:after {
+                transform: translatey(-50%) rotate(90deg);
+            }
+        }
+    }
+
+    .parcel_box {
+        display: none;
+
+        &>div {
+            margin-bottom: 60px;
+             p {
+                @include kotra();
+                font-size: 14px;
+            }
+
+            .strong {
+                font-weight: bold;
+            }
+        }
+
+        
+           
+        
+
+        
+    }
+}
+
+
 .suggestion {
     width: 1080px; 
     height: auto;

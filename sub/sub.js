@@ -55,71 +55,69 @@ for (let i=0; i<shoppingList.length; i++) { //shoppingList 길이만큼 for를 �
 }//shoppingList_for
 
 
-//sub_menu
-$(".main_lnb li").hover(function() {
-    $(this).children(".sub_menu_area").stop().slideToggle(300)
-  })
 
 //search_box
-  document.addEventListener('DOMContentLoaded', () => { 
-    const searchIcon = document.getElementById('search_icon')
-    const searchClose = document.querySelector('.search_close')
-  
-    searchIcon.addEventListener('click', function() {
-      document.querySelector('.search_area').style.height = 340 + 'px'
-    })
-  
-    searchClose.addEventListener('click', function(){
-      document.querySelector('.search_area').style.height = 0
-    })
-})
+  const searchIcon = document.getElementById('search_icon')
+  const searchClose = document.querySelector('.search_close')
+
+  searchIcon.addEventListener('click', function() {
+    document.querySelector('.search_area').style.height = 340 + 'px'
+  })
+
+  searchClose.addEventListener('click', function(){
+    document.querySelector('.search_area').style.height = 0
+  })
+
 
 //footer list
-document.addEventListener("DOMContentLoaded", function() {
-  let item1Link = document.getElementById("item1-link");
-  let item2Link = document.getElementById("item2-link");
-  let item3Link = document.getElementById("item3-link");
+const item1Link = document.getElementById("item1-link");
+const item2Link = document.getElementById("item2-link");
+const item3Link = document.getElementById("item3-link");
 
-  let item1Box = document.getElementById("item1");
-  let item2Box = document.getElementById("item2");
-  let item3Box = document.getElementById("item3");
+const item1Box = document.getElementById("item1");
+const item2Box = document.getElementById("item2");
+const item3Box = document.getElementById("item3");
 
-  item1Link.addEventListener("click", function(event) {
-    event.preventDefault();
-    toggleItem(item1Box);
-  });
+item1Link.addEventListener("click", function(event) {
+  event.preventDefault();
+  toggleItem(item1Box);
+});
 
-  item2Link.addEventListener("click", function(event) {
-    event.preventDefault();
-    toggleItem(item2Box);
-  });
+item2Link.addEventListener("click", function(event) {
+  event.preventDefault();
+  toggleItem(item2Box);
+});
 
-  item3Link.addEventListener("click", function(event) {
-    event.preventDefault();
-    toggleItem(item3Box);
-  });
+item3Link.addEventListener("click", function(event) {
+  event.preventDefault();
+  toggleItem(item3Box);
+});
 
-  function toggleItem(item) {
-    let display = item.style.display;
+function toggleItem(item) {
+  let display = item.style.display;
+  const listBoxes = document.getElementsByClassName("list_box");
+  for (let i = 0; i < listBoxes.length; i++) {
+    listBoxes[i].style.display = "none";
+  }
+  if (display === "block") {
+    item.style.display = "none";
+  } else {
+    item.style.display = "block";
+  }
+}
+
+// Body 클릭 시 display:none
+document.body.addEventListener("click", function(event) {
+  let clickedElement = event.target;
+  let isItemLink = [item1Link, item2Link, item3Link].includes(clickedElement);
+  let isItemBox = [item1Box, item2Box, item3Box].includes(clickedElement);
+
+  if (!isItemLink && !isItemBox) {
     let listBoxes = document.getElementsByClassName("list_box");
     for (let i = 0; i < listBoxes.length; i++) {
       listBoxes[i].style.display = "none";
     }
-    item.style.display = (display === "block" ? "none" : "block");
   }
-
-  document.body.addEventListener("click", function(event) {
-    let clickedElement = event.target;
-    let isItemLink = [item1Link, item2Link, item3Link].includes(clickedElement);
-    let isItemBox = [item1Box, item2Box, item3Box].includes(clickedElement);
-
-    if (!isItemLink && !isItemBox) {
-      let listBoxes = document.getElementsByClassName("list_box");
-      for (let i = 0; i < listBoxes.length; i++) {
-        listBoxes[i].style.display = "none";
-      }
-    }
-  });
 });
 
 //header-wrap border
@@ -127,12 +125,12 @@ const lnbItems = document.querySelectorAll('#main_lnb .lnb_item');
 
 lnbItems.forEach((lnbItem) => {
   lnbItem.addEventListener('mouseover', () => {
-    const headerWrap = document.getElementById('header_wrap');
+    let headerWrap = document.getElementById('header_wrap');
     headerWrap.style.border = 'none';
   });
 
   lnbItem.addEventListener('mouseout', () => {
-    const headerWrap = document.getElementById('header_wrap');
+    let headerWrap = document.getElementById('header_wrap');
     headerWrap.style.border = '';
   });
 });
@@ -141,14 +139,14 @@ lnbItems.forEach((lnbItem) => {
 let header = document.querySelector('.header_wrap')
 let headerHeight = header.offsetHeight;
 
-window.onscroll = function () {
+window.addEventListener('scroll', function(){
   let windowTop = window.scrollY;
   if (windowTop >= headerHeight) {
     header.classList.add("drop");
   } else {
     header.classList.remove("drop");
   }
-};
+});
 
 /* top_btn */
 const topBtn = document.querySelector('.top_btn')
@@ -193,7 +191,7 @@ function showModal(cologneId) {
     }
   });
 }
-let closes = document.querySelectorAll('.cologne_close');
+const closes = document.querySelectorAll('.cologne_close');
 closes.forEach(function(close) {
   close.addEventListener('click', function(){
     let modal = close.closest('.cologne_modal');
@@ -211,7 +209,6 @@ bgs.forEach(function(bg) {
 
 
 //sort
-document.addEventListener('DOMContentLoaded', () => {
   const sortBtn = document.querySelector('.sort_area');
   const sortBox = document.querySelector('.sort_box');
   let state = false;
@@ -225,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sortBox.style.display = 'none';
     state = false;
   });
-});
 
 
 const sortByName = document.getElementById('sortByName');
@@ -265,4 +261,13 @@ resetSort.addEventListener('click', function() {
     cologneProduct.appendChild(cologneBox);
   });
 });
+
+
+//**제이쿼리
+//sub_menu
+$(function(){
+  $(".main_lnb li").hover(function() {
+    $(this).children(".sub_menu_area").stop().slideToggle(300)
+  })
+  })
 
