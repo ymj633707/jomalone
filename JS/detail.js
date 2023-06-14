@@ -80,23 +80,27 @@ lnbItems.forEach((lnbItem) => {
 
 
 //detail_box01
-  const noteBtn = document.querySelector('.note_btn')
-  const noteContent = document.querySelector('.note_box')
-  const notePlus = document.querySelector('.plusminus')
+const noteBtn = document.querySelector('.note_btn');
+const noteContent = document.querySelector('.note_box');
+const notePlus = document.querySelector('.plusminus');
 
-  let noteOpen = false
+let noteOpen = true; // 기본적으로 펼쳐진 상태로 설정
 
-  noteBtn.addEventListener('click', function(){
-      if(noteOpen===false) {
-          noteContent.style.display = 'block'
-          notePlus.classList.add('active')
-          noteOpen = true
-      } else {
-          noteContent.style.display = 'none';
-          notePlus.classList.remove('active')
-          noteOpen = false
-      }
-  })
+noteContent.style.display = 'block';
+notePlus.classList.add('active');
+noteOpen = true;
+
+noteBtn.addEventListener('click', function(){
+    if(noteOpen === false) {
+        noteContent.style.display = 'block';
+        notePlus.classList.add('active');
+        noteOpen = true;
+    } else {
+        noteContent.style.display = 'none';
+        notePlus.classList.remove('active');
+        noteOpen = false;
+    }
+});
 
 //detail_box02
   const inBtn = document.querySelector('.in_btn')
@@ -386,10 +390,6 @@ const swiper = new Swiper(".mySwiper", {
   watchSlidesProgress: true,
 });
 const swiper2 = new Swiper(".mySwiper2", {
-/*   autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  }, */
   loop: true,
   spaceBetween: 10,
   navigation: {
