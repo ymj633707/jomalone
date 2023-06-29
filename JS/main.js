@@ -358,7 +358,16 @@ function showQuestion() {
   const questions = document.getElementsByClassName("question");
   
   if (currentQuestion > 0) {
-    questions[currentQuestion - 1].style.display = "none";
+    const previousQuestion = questions[currentQuestion - 1];
+    const selectedOption = selectedOptions['question' + currentQuestion];
+    
+    // 이전 질문의 선택 여부를 확인하여 체크되지 않은 경우 넘어가지 않음
+    if (!selectedOption) {
+      alert('질문의 답을 선택해주세요.');
+      return;
+    }
+    
+    previousQuestion.style.display = "none";
   }
   
   currentQuestion++;
@@ -371,14 +380,17 @@ function showQuestion() {
   questions[currentQuestion - 1].style.display = "block";
 }
 
+
 function showResult() {
   const resultDiv1 = document.getElementById("result1");
   const resultDiv2 = document.getElementById("result2");
+  const restartButton = document.getElementById("restartButton");
+  const startPage = document.getElementById("start");
 
   let option1Count = 0;
   let option2Count = 0;
 
-  for (let question in selectedOptions) { 
+  for (let question in selectedOptions) {
     if (selectedOptions[question] === 'option1') {
       option1Count++;
     } else if (selectedOptions[question] === 'option2') {
@@ -392,8 +404,38 @@ function showResult() {
   } else if (option1Count < option2Count) {
     resultDiv1.style.display = "none";
     resultDiv2.style.display = "block";
-  } 
+  }
+
+  restartButton.style.display = "block";
+  startPage.style.display = "none"; // 첫 화면 숨김
 }
+
+function restartTest() {
+  currentQuestion = 0;
+  selectedOptions = {
+    question1: null,
+    question2: null
+  };
+
+  const resultDiv1 = document.getElementById("result1");
+  const resultDiv2 = document.getElementById("result2");
+  const restartButton = document.getElementById("restartButton");
+  const startPage = document.getElementById("start");
+
+  const optionInputs = document.querySelectorAll('input[type="radio"]');
+  for (let i = 0; i < optionInputs.length; i++) {
+    optionInputs[i].checked = false;
+  }
+
+  resultDiv1.style.display = "none";
+  resultDiv2.style.display = "none";
+  restartButton.style.display = "none";
+  startPage.style.display = "block"; // 첫 화면 보여줌
+
+}
+
+
+
 
 
 

@@ -49,20 +49,33 @@ lnbItems.forEach((lnbItem) => {
 });
 
 //option_box
-  const optionBtn = document.querySelector('.detail_option')
-  const optionBox = document.querySelector('.option_box')
+const optionBtn = document.querySelector('.detail_option');
+const optionBox = document.querySelector('.option_box');
 
-  let optionOpen = false;
+let optionOpen = false;
 
-  optionBtn.addEventListener('click', ()=> {
-    if(optionOpen === false) {
-      optionBox.style.display = 'block'
-      optionOpen = true
-    } else {
-      optionBox.style.display = 'none'
-      optionOpen = false
-    }
-  })
+optionBtn.addEventListener('click', () => {
+  if (optionOpen === false) {
+    optionBox.style.display = 'block';
+    optionOpen = true;
+  } else {
+    optionBox.style.display = 'none';
+    optionOpen = false;
+  }
+});
+
+document.body.addEventListener('click', (event) => {
+  const target = event.target;
+  const isOptionBoxClicked = target.classList.contains('option_box') || target.closest('.option_box');
+
+  if (!isOptionBoxClicked) {
+    optionBox.style.display = 'none';
+    optionOpen = false;
+  }
+});
+
+
+
 
 
 //search_area

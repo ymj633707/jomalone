@@ -483,7 +483,7 @@ header {
            } /*detail_txt01*/
 
            .detail_option {
-            width: 440px; height: 50px;
+            width: 300px; height: 50px;
             margin: 0 auto;
             border: 1px solid #000;
             box-sizing: border-box;
@@ -493,13 +493,17 @@ header {
             cursor: pointer;
             position: relative;
 
+            p {
+                text-align: center;
+            }
+
             .option_box {
                 position: absolute;
-                top: -152px; left: -1px;
+                top: 48px; left: -1px;
                 background-color: #fff;
                 border: 1px solid #000;
                 box-sizing: border-box;
-                width: 440px;
+                width: 300px;
                 display: none;
 
                     &>div {
@@ -508,12 +512,13 @@ header {
                         box-sizing: border-box;
                         @include bookk01();
                         text-align: center;
+                        font-size: 15px;
                     }
                     &>div:last-child {
                         border-bottom: none;
                     }
                     &>div:hover {
-                        font-weight: bold;
+                        background-color: #f1f1f1;
                     }
                 
             }
@@ -528,7 +533,7 @@ header {
             
 
             .cart_btn {
-                width: 220px; height: 45px;
+                width: 200px; height: 45px;
                 background-color: #fff;
                 border: 1px solid #000;
                 box-sizing: border-box;
@@ -539,7 +544,7 @@ header {
             }
 
             .buy_btn {
-                width: 220px; height: 45px;
+                width: 200px; height: 45px;
                 background-color: #000;
                 color: #fff;
                 @include bookk01();

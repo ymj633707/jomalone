@@ -1006,10 +1006,10 @@ header {
   font-family: "Bookk Myungjo";
   font-weight: bold;
 }
-.best_modal_area1 .modalBox .best_info02 span {
+.best_modal_area1 .modalBox .best_info02 .cart {
   position: absolute;
   left: 50%;
-  bottom: 80px;
+  bottom: 100px;
   transform: translateX(-50%);
   display: block;
   width: 300px;
@@ -1019,20 +1019,51 @@ header {
   line-height: 35px;
   transition: all 0.3s;
 }
-.best_modal_area1 .modalBox .best_info02 span a {
+.best_modal_area1 .modalBox .best_info02 .cart a {
   box-sizing: border-box;
   padding: 10px 100px;
   color: #fff;
   font-family: "Bookk Myungjo";
   font-weight: normal;
 }
-.best_modal_area1 .modalBox .best_info02 span:hover {
+.best_modal_area1 .modalBox .best_info02 .view {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  display: block;
+  width: 300px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 20px;
+  line-height: 35px;
+  transition: all 0.3s;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+.best_modal_area1 .modalBox .best_info02 .view a {
+  box-sizing: border-box;
+  padding: 10px 100px;
+  color: #000;
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-weight: normal;
+}
+.best_modal_area1 .modalBox .best_info02 .cart:hover {
   background-color: #fff;
   border: 1px solid #000;
   box-sizing: border-box;
 }
-.best_modal_area1 .modalBox .best_info02 span:hover a {
+.best_modal_area1 .modalBox .best_info02 .cart:hover a {
   color: #000;
+}
+.best_modal_area1 .modalBox .best_info02 .view:hover {
+  background-color: #000;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+.best_modal_area1 .modalBox .best_info02 .view:hover a {
+  color: #fff;
 }
 .best_modal_area1 .modalBox .best_info02 button {
   width: 40px;
@@ -1208,29 +1239,41 @@ header {
 .qna .question button span img {
   width: 100%;
 }
-.qna #question1_1:checked ~ .label_area .question1_1 {
-  border: 1px solid black;
+.qna #question1_1:checked ~ .label_area .question1_1 p {
+  background-color: #000;
+  padding: 5px 20px;
   box-sizing: border-box;
+  color: #fff;
 }
-.qna #question1_2:checked ~ .label_area .question1_2 {
-  border: 1px solid black;
+.qna #question1_2:checked ~ .label_area .question1_2 p {
+  background-color: #000;
+  padding: 5px 20px;
   box-sizing: border-box;
+  color: #fff;
 }
-.qna #question2_1:checked ~ .label_area .question2_1 {
-  border: 1px solid black;
+.qna #question2_1:checked ~ .label_area .question2_1 p {
+  background-color: #000;
+  padding: 5px 20px;
   box-sizing: border-box;
+  color: #fff;
 }
-.qna #question2_2:checked ~ .label_area .question2_2 {
-  border: 1px solid black;
+.qna #question2_2:checked ~ .label_area .question2_2 p {
+  background-color: #000;
+  padding: 5px 20px;
   box-sizing: border-box;
+  color: #fff;
 }
-.qna #question3_1:checked ~ .label_area .question3_1 {
-  border: 1px solid black;
+.qna #question3_1:checked ~ .label_area .question3_1 p {
+  background-color: #000;
+  padding: 5px 20px;
   box-sizing: border-box;
+  color: #fff;
 }
-.qna #question3_2:checked ~ .label_area .question3_2 {
-  border: 1px solid black;
+.qna #question3_2:checked ~ .label_area .question3_2 p {
+  background-color: #000;
+  padding: 5px 20px;
   box-sizing: border-box;
+  color: #fff;
 }
 .qna .result {
   position: absolute;
@@ -1243,6 +1286,28 @@ header {
   background: url(../img/main/test_bg.png) no-repeat center;
   background-size: cover;
   cursor: url(../img/main/cursor.png) 2 2, auto;
+}
+.qna .result .restart_btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  font-family: "Bookk Myungjo";
+  font-weight: bold;
+  font-size: 20px;
+  cursor: url(../img/main/cursor.png) 2 2, auto;
+}
+.qna .result .restart_btn span {
+  width: 25px;
+  display: block;
+  position: absolute;
+  left: -35px;
+  top: 0;
+}
+.qna .result .restart_btn span img {
+  width: 100%;
 }
 .qna .result h4 {
   width: 100%;

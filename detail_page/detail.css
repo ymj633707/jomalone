@@ -433,7 +433,7 @@ header {
   margin-bottom: 10px;
 }
 .detail_content01 .detail_info .detail_option {
-  width: 440px;
+  width: 300px;
   height: 50px;
   margin: 0 auto;
   border: 1px solid #000;
@@ -445,14 +445,17 @@ header {
   cursor: pointer;
   position: relative;
 }
+.detail_content01 .detail_info .detail_option p {
+  text-align: center;
+}
 .detail_content01 .detail_info .detail_option .option_box {
   position: absolute;
-  top: -152px;
+  top: 48px;
   left: -1px;
   background-color: #fff;
   border: 1px solid #000;
   box-sizing: border-box;
-  width: 440px;
+  width: 300px;
   display: none;
 }
 .detail_content01 .detail_info .detail_option .option_box > div {
@@ -462,12 +465,13 @@ header {
   font-family: "Bookk Myungjo";
   font-weight: 300;
   text-align: center;
+  font-size: 15px;
 }
 .detail_content01 .detail_info .detail_option .option_box > div:last-child {
   border-bottom: none;
 }
 .detail_content01 .detail_info .detail_option .option_box > div:hover {
-  font-weight: bold;
+  background-color: #f1f1f1;
 }
 .detail_content01 .detail_info .detail_button {
   width: 440px;
@@ -478,7 +482,7 @@ header {
   margin: 0 auto;
 }
 .detail_content01 .detail_info .detail_button .cart_btn {
-  width: 220px;
+  width: 200px;
   height: 45px;
   background-color: #fff;
   border: 1px solid #000;
@@ -491,7 +495,7 @@ header {
   line-height: 45px;
 }
 .detail_content01 .detail_info .detail_button .buy_btn {
-  width: 220px;
+  width: 200px;
   height: 45px;
   background-color: #000;
   color: #fff;
