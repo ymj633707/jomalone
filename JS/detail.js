@@ -64,16 +64,6 @@ optionBtn.addEventListener('click', () => {
   }
 });
 
-document.body.addEventListener('click', (event) => {
-  const target = event.target;
-  const isOptionBoxClicked = target.classList.contains('option_box') || target.closest('.option_box');
-
-  if (!isOptionBoxClicked) {
-    optionBox.style.display = 'none';
-    optionOpen = false;
-  }
-});
-
 
 
 
